@@ -65,6 +65,8 @@ import add_icon from './add_icon.png'
 import upload_area from './upload_area.png'
 import zomato from './zomato.webp';
 
+export const url = "https://food-delivery-backend-wwv5.onrender.com"
+
 export const assets = {
     logo,
     zomato,
@@ -359,4 +361,5 @@ export const food_list = [
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
     }
+
 ]
