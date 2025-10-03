@@ -1,0 +1,95 @@
+.place-order {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.place-order-left {
+  flex: 1;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #ff5722;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.3);
+}
+
+.multi-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.multi-fields input {
+  flex: 1;
+}
+
+.place-order-right {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cart-total {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-total-details:last-child {
+  border-bottom: none;
+}
+
+button {
+  width: 100%;
+  background: #ff5722;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #e64a19;
+  box-shadow: 0 4px 10px rgba(230, 74, 25, 0.3);
+}

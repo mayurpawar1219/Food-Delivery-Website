@@ -1,0 +1,147 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.list {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.list:hover {
+  transform: translateY(-5px);
+}
+
+.list p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.list-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.list-table-format {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
+.list-table-format.title {
+  background: #ff6600;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}
+
+.list-table-format:hover {
+  background: rgba(255, 102, 0, 0.1);
+}
+
+.list-table-format img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-table-format img:hover {
+  transform: scale(1.1);
+}
+
+.list-table-format p {
+  font-size: 1.2rem;
+  color: #444;
+  flex: 1;
+  text-align: center;
+}
+
+.list-table-format p:nth-child(2) {
+  font-weight: bold;
+  color: #222;
+}
+
+.list-table-format p:nth-child(3) {
+  color: #ff6600;
+}
+
+.list-table-format p:nth-child(4) {
+  font-weight: bold;
+}
+
+.list-table-format p:last-child {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.list-table-format p:last-child:hover {
+  color: darkred;
+}
+.list {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Move Title to Top */
+.list-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+  border-bottom: 3px solid #ff6600;
+  padding-bottom: 10px;
+}
+
+/* List Table Styling */
+.list-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .list-table-format {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .list-table-format p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .list-table-format img {
+    width: 80px;
+    height: 80px;
+  }
+}

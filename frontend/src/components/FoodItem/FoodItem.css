@@ -1,0 +1,119 @@
+.food-item {
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.food-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.food-item-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.food-item:hover .food-item-image {
+  transform: scale(1.1);
+}
+
+.food-item-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.food-item-name-rating p {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.food-item-name-rating img {
+  width: 80px;
+}
+
+.food-item-desc {
+  color: #676767;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.food-item-price {
+  color: #e74c3c;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 15px 0px;
+}
+
+/* .food-item-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px; 
+}
+
+
+.food-item-counter img {
+  width: 24px; 
+  height: 24px;
+  cursor: pointer;
+} */
+
+.food-item-img-container{
+  position: relative;
+}
+
+.food-item-img-container .add {
+  width: 35px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.food-item-counter{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  background-color: #fff;
+}
+
+.food-item-counter {
+  display: flex;  /* Enables flexbox */
+  align-items: center; /* Aligns items vertically in the center */
+  gap: 8px;  /* Adds spacing between buttons */
+}
+
+.food-item-counter img {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  cursor: pointer;
+}
+
+
+
+

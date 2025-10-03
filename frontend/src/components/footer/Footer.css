@@ -1,0 +1,116 @@
+.footer {
+  background-color: #181818;
+  color: #d9d9d9;
+  padding: 30px 6vw; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  margin-top: 20px; /* Slightly reduced margin */
+}
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-left img {
+  max-width: 150px;
+}
+
+.footer-center, .footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-center h2, .footer-right h2 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-center ul, .footer-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center li, .footer-right li {
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-center li:hover, .footer-right li:hover {
+  color: #ff9e0b;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+.footer-social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  opacity: 0.8; /* Fade effect */
+}
+
+/* Ensures icons are properly sized */
+.footer-social-icons img {
+  width: 40px; /* Adjust size */
+  height: 40px;
+  cursor: pointer;
+}
+
+
+.footer-apps {
+  display: flex;
+  gap: 10px; /* Space between images */
+  justify-content: center; /* Centering images horizontally */
+  align-items: center; /* Aligning images vertically */
+  margin-top: 15px; /* Adjusting spacing from the above content */
+}
+
+.footer-apps img {
+  width: 150px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.footer-apps img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+.footer-copyright {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-color: grey;
+  border: none;
+}
+
+
+.contact-link {
+  color: inherit; /* Keep the text color same as other links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-link:hover {
+  color: #e74c3c; /* Change color on hover */
+}
