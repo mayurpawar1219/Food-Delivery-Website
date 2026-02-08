@@ -7,11 +7,9 @@ import Orders from "./pages/Orders/Orders";
 import List from "./pages/List/List";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BACKEND_URL } from "./config";
 
 const App = () => {
-  const url = "https://food-delivery-backend-ww5.onrender.com";
-
-
   return (
     <div>
       <ToastContainer />
@@ -20,9 +18,9 @@ const App = () => {
       <div className="app-content">
         <Sidebar />
         <Routes>
-          <Route path="/add" element={<Add url={url}/>} />
-          <Route path="/list" element={<List url={url}/>} />
-          <Route path="/orders" element={<Orders url={url}/>} />
+          <Route path="/add" element={<Add url={BACKEND_URL} />} />
+          <Route path="/list" element={<List url={BACKEND_URL} />} />
+          <Route path="/orders" element={<Orders url={BACKEND_URL} />} />
         </Routes>
       </div>
     </div>
