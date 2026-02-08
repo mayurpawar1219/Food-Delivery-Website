@@ -1,82 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Orders.css";
-import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useEffect } from "react";
-import { assets} from "../../assets/assets";
+import { assets } from "../../assets/assets";
 
 const Orders = ({ url }) => {
   const [orders, setOrders] = useState([]);
 
-  const fetchAllOrders = async () => {
-    const response = await axios.get(url + "/api/order/list");
-    if (response.data.success) {
-      setOrders(response.data.data);
-      console.log(response.data.data);
-    } else {
-      toast.error("Error fetching orders");
+  const fetchOrders = async () => {
+    const res = await axios.get(`${url}/api/order/list`);
+    if (res.data.success) {
+      setOrders(res.data.data);
     }
   };
-  const statusHandler = async (event,orderId) => {
-    const response = await axios.post(url + "/api/order/status",{orderId,
-      status: event.target.value
-    })
-    if(response.data.success){
-      await fetchAllOrders();
-    }
-  }
+
+  const statusHandler = async (e, id) => {
+    await axios.post(`${url}/api/order/status`, {
+      orderId: id,
+      status: e.target.value,
+    });
+    fetchOrders();
+  };
+
   useEffect(() => {
-    fetchAllOrders();
+    fetchOrders();
   }, []);
 
   return (
-  <div className="order add">
-    <h3>Order Page</h3>
-    <div className="order-list">
-      {orders.map((order,index)=>(
-        <div key={index} className='order-item'>
-          <img src={assets.parcel_icon} alt=""/>
+    <div className="order add">
+      <h3>Orders</h3>
+
+      {orders.map((order) => (
+        <div className="order-item" key={order._id}>
+          <img src={assets.parcel_icon} alt="" />
+
           <div>
-            <p className='order-item-food'>
-              {order.items.map((item,index)=>{
-                if(index===order.items.length-1){
-                  return item.name + " X " + item.quantity
-                }
-                else{
-                  return item.name + " X " + item.quantity + ", "
-                }
-              })}
-
+            <p>
+              {order.items.map(
+                (i, idx) =>
+                  `${i.name} x ${i.quantity}${
+                    idx !== order.items.length - 1 ? ", " : ""
+                  }`
+              )}
             </p>
-            <p className='order-item-name'>{order.address.firstName+" "+order.address.lastName}</p>
-            <div className="order item-address">
-              <p>{order.address.street+","}</p>
-              <p>{order.address.city+","}</p>
-              <p>{order.address.state+","}</p>
-              <p>{order.address.country+","}</p>
-              <p>{order.address.zipCode}</p>
 
-            </div>
-            <p className='order-item-phone'>{order.address.phone}</p>
+            <p>{order.address.firstName} {order.address.lastName}</p>
+            <p>{order.address.city}</p>
+            <p>{order.address.phone}</p>
           </div>
-          <p>Items : {order.items.length}</p>
-          <p>${order.amount}</p>
-          <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
-            <option value="Food Processing">Food Processing</option>
-            <option value="Out for Delivery">Out for Delivery</option>
-            <option value="Delivered">Delivered</option>
+
+          <p>₹{order.amount}</p>
+
+          <select
+            value={order.status}
+            onChange={(e) => statusHandler(e, order._id)}
+          >
+            <option>Food Processing</option>
+            <option>Out for Delivery</option>
+            <option>Delivered</option>
           </select>
-          
-          
-          </div>
-      )
-
-      )}
+        </div>
+      ))}
     </div>
-
-  </div>
-  )
+  );
 };
 
 export default Orders;
